@@ -1,7 +1,7 @@
 const TodoItem = (props) => {
 
 function handleDelete () {
-    props.wipe(props.item);
+    props.onDelete(props.item);
 }
 
     return (

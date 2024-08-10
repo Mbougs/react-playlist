@@ -6,18 +6,23 @@ const TodoComponent = () => {
   let todosList = ["wash up", "eat some pizza", "take a nap", "buy flowers"];
   const [todos, setTodos] = useState(todosList);
 
-  const onDelete = (item) => {
-    let updatedTodos = todos.filter((val, index) => (
-      item !== val
-    ),
-    setTodos(updatedTodos)
-    );
+  // function onDelete(item) {
+  //   let updatedTodos = todos.filter(function (val, index) {
+  //     return item !== val;
+  //   });
+  //   setTodos(updatedTodos);
+  // }
 
+  const onDelete = (item) => {
+    let updatedTodos = todos.filter((val, index) => {
+      return item !== val;
+    });
+    setTodos(updatedTodos)
   };
 
   const todosArr = todos.map((item, index) => (
 
-    <TodoItem item={ item } key={ index } wipe={ onDelete } />
+    <TodoItem item={ item } key={ index } onDelete={ onDelete } />
 
    ));
 
