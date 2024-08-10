@@ -1,3 +1,5 @@
+import './css/todoitem.css'
+
 const TodoItem = (props) => {
 
 function handleDelete () {
@@ -8,7 +10,7 @@ function handleDelete () {
         <li>
             <div className="todo-item">
                 <span className="item-name">{ props.item }</span>
-                <span className="item-delete" onClick={handleDelete}> x</span>
+                <span className="item-remove" onClick={handleDelete}> x</span>
             </div>
         </li>
     );

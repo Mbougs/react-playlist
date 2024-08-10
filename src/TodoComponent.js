@@ -2,6 +2,7 @@ import { useState } from "react";
 import TodoItem from './TodoItem';
 
 
+
 const TodoComponent = () => {
   let todosList = ["wash up", "eat some pizza", "take a nap", "buy flowers"];
   const [todos, setTodos] = useState(todosList);
