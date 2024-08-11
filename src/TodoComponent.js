@@ -1,8 +1,7 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import TodoItem from './TodoItem';
 import AddItem from "./AddItem";
-
-
 
 const TodoComponent = () => {
   let todosList = ["Wash up", "Eat some pizza", "Take a nap", "Buy flowers"];
@@ -25,6 +24,8 @@ const TodoComponent = () => {
   const onAdd = (item) => {
     let updatedTodos = todos;
     updatedTodos.push(item);
+    console.log(updatedTodos);
+    
     return setTodos(updatedTodos);
   };
 
@@ -36,12 +37,14 @@ const TodoComponent = () => {
 
   return (
     <div id="todo-list">
+      <Link to="/about">About</Link>
       <p>The busiest people have the most leisure...</p>
       <ul>
       {  todosArr   }
       <AddItem onAdd={ onAdd } />
       </ul>
-    </div>
+    </div>      
   );
 }
+
 export default TodoComponent;
